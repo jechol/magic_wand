@@ -1,11 +1,10 @@
 # Anvil
 
-**TODO: Add description**
+Anvil is toolkit to use [Witchcraft](https://github.com/witchcrafters) and [Reather](https://github.com/jechol/reather) more easily.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `anvil` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `anvil` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -15,7 +14,4 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/anvil>.
-
+The docs can be found at <https://hexdocs.pm/anvil>.
