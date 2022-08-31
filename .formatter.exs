@@ -1,6 +1,5 @@
 [
-  inputs: ["*.exs", "config/*.exs"],
-  subdirectories: ["apps/*"],
+  inputs: ["lib/**/*.ex", "test/**/*.ex", "*.exs", "config/*.exs", "**/*.exs", "**/*.ex"],
   locals_without_parens: [
     assert_map_match: 1,
     setup_right: 1,

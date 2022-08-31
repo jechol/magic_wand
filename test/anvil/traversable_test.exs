@@ -2,13 +2,11 @@ defmodule Anvil.TraversableTest do
   use Anvil.Case
 
   test "EitherList" do
-    assert_right([] == [] |> EitherList.traverse())
+    assert_right [] == [] |> EitherList.traverse()
 
-    assert_right(
-      [1, 2, 3] ==
-        [%Right{right: 1}, %Right{right: 2}, %Right{right: 3}]
-        |> EitherList.traverse()
-    )
+    assert_right [1, 2, 3] ==
+                   [%Right{right: 1}, %Right{right: 2}, %Right{right: 3}]
+                   |> EitherList.traverse()
 
     assert %Left{left: :some_err} ==
              [%Right{right: 1}, %Left{left: :some_err}, %Right{right: 3}]
