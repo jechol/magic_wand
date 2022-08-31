@@ -1,12 +1,12 @@
-defmodule Wand.MonadAssertions do
-  use Wand
+defmodule MagicWand.MonadAssertions do
+  use MagicWand
 
   defmacro assert_right({operator, _, [left, right]}) when operator in [:=, :==] do
     quote do
       ExUnit.Assertions.assert(
         unquote(operator)(
           %Right{right: unquote(left)},
-          unquote(right) |> Wand.MonadAssertions.run_if_reather()
+          unquote(right) |> MagicWand.MonadAssertions.run_if_reather()
         )
       )
     end
@@ -15,7 +15,8 @@ defmodule Wand.MonadAssertions do
   defmacro assert_left_error({:==, _, [left, right]}) do
     quote do
       ExUnit.Assertions.assert(
-        %Left{left: %Error{raw: raw}} = unquote(right) |> Wand.MonadAssertions.run_if_reather()
+        %Left{left: %Error{raw: raw}} =
+          unquote(right) |> MagicWand.MonadAssertions.run_if_reather()
       )
 
       ExUnit.Assertions.assert(unquote(left) == raw)
@@ -26,7 +27,7 @@ defmodule Wand.MonadAssertions do
     quote do
       ExUnit.Assertions.assert(
         %Left{left: %Error{raw: unquote(left)}} =
-          unquote(right) |> Wand.MonadAssertions.run_if_reather()
+          unquote(right) |> MagicWand.MonadAssertions.run_if_reather()
       )
     end
   end
@@ -36,7 +37,7 @@ defmodule Wand.MonadAssertions do
       ExUnit.Assertions.assert(
         unquote(operator)(
           %Just{just: unquote(left)},
-          unquote(right) |> Wand.MonadAssertions.run_if_reather()
+          unquote(right) |> MagicWand.MonadAssertions.run_if_reather()
         )
       )
     end
@@ -45,7 +46,7 @@ defmodule Wand.MonadAssertions do
   defmacro assert_nothing(expr) do
     quote do
       ExUnit.Assertions.assert(
-        %Nothing{} = unquote(expr) |> Wand.MonadAssertions.run_if_reather()
+        %Nothing{} = unquote(expr) |> MagicWand.MonadAssertions.run_if_reather()
       )
     end
   end

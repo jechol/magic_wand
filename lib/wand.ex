@@ -1,4 +1,4 @@
-defmodule Wand do
+defmodule MagicWand do
   defmacro __using__([]) do
     %Macro.Env{module: mod, function: fun} = __CALLER__
 
@@ -18,14 +18,14 @@ defmodule Wand do
       require Logger
       require Mok
 
-      use Wand.StrictIf
-      use Wand.Error
-      use Wand.Monad
+      use MagicWand.StrictIf
+      use MagicWand.Error
+      use MagicWand.Monad
 
-      alias Wand.Traversable.{EitherList, WriterList, ReatherList, ReatherMap}
-      alias Wand.Nillable
-      alias Wand.Async
-      alias Wand
+      alias MagicWand.Traversable.{EitherList, WriterList, ReatherList, ReatherMap}
+      alias MagicWand.Nillable
+      alias MagicWand.Async
+      alias MagicWand
     end
   end
 end

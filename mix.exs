@@ -1,9 +1,9 @@
-defmodule Wand.MixProject do
+defmodule MagicWand.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :wand,
+      app: :magic_wand,
       version: "0.1.0",
       elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -11,15 +11,15 @@ defmodule Wand.MixProject do
       deps: deps(),
       description: description(),
       package: package(),
-      name: "Wand",
-      source_url: "https://github.com/jechol/wand"
+      name: "MagicWand",
+      source_url: "https://github.com/jechol/magic_wand"
     ]
   end
 
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      mod: {Wand.Application, []},
+      mod: {MagicWand.Application, []},
       extra_applications: [:logger]
     ]
   end
@@ -35,19 +35,18 @@ defmodule Wand.MixProject do
       {:tesla, ">= 0.0.0"},
       {:jason, ">= 0.0.0"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
   end
 
   defp description() do
-    "Wand is toolkit to use Witchcraft and Reather more easily."
+    "MagicWand is toolkit to use Witchcraft and Reather more easily."
   end
 
   defp package() do
     [
+      name: "magic_wand",
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/jechol/wand"}
+      links: %{"GitHub" => "https://github.com/jechol/magic_wand"}
     ]
   end
 end

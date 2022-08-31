@@ -1,4 +1,4 @@
-defmodule Wand.MapMatcher do
+defmodule MagicWand.MapMatcher do
   defmacro assert_map_match({:=, _, [left, right]}) do
     import ExUnit.Assertions
 

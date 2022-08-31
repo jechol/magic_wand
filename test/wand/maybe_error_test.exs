@@ -1,7 +1,7 @@
-defmodule Wand.MaybeErrorTest do
-  use Wand.Case
+defmodule MagicWand.MaybeErrorTest do
+  use MagicWand.Case
 
-  alias Wand.MaybeError
+  alias MagicWand.MaybeError
 
   test "Atom" do
     assert %Error{raw: :error} = :error |> MaybeError.wrap()

@@ -1,5 +1,5 @@
-defmodule Wand.TraversableTest do
-  use Wand.Case
+defmodule MagicWand.TraversableTest do
+  use MagicWand.Case
 
   test "EitherList" do
     assert_right [] == [] |> EitherList.traverse()

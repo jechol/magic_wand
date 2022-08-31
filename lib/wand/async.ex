@@ -1,4 +1,4 @@
-defmodule Wand.Async do
+defmodule MagicWand.Async do
   def map(enumerable, func) do
     map(enumerable, func, :erlang.system_info(:schedulers) * 16)
   end
@@ -9,7 +9,7 @@ defmodule Wand.Async do
     enumerable
     |> Enum.chunk_every(chunk_size)
     |> Enum.map(fn chunks ->
-      Task.Supervisor.async(Wand.TaskSupervisor, fn ->
+      Task.Supervisor.async(MagicWand.TaskSupervisor, fn ->
         chunks |> Enum.map(func)
       end)
     end)

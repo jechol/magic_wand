@@ -1,5 +1,5 @@
-defmodule Wand.StrictIfTest do
-  use Wand.Case
+defmodule MagicWand.StrictIfTest do
+  use MagicWand.Case
 
   def div_10_by(n) do
     10 / n

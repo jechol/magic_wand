@@ -1,5 +1,5 @@
-defmodule Wand.AsyncTest do
-  use Wand.Case
+defmodule MagicWand.AsyncTest do
+  use MagicWand.Case
 
   test "map/2" do
     check_less_than_10 = fn

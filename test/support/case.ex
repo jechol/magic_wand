@@ -1,4 +1,4 @@
-defmodule Wand.Case do
+defmodule MagicWand.Case do
   use ExUnit.CaseTemplate
 
   using(opts) do
@@ -6,9 +6,9 @@ defmodule Wand.Case do
 
     quote do
       use ExUnit.Case, async: unquote(async)
-      use Wand
-      import Wand.MonadAssertions
-      import Wand.MapMatcher
+      use MagicWand
+      import MagicWand.MonadAssertions
+      import MagicWand.MapMatcher
     end
   end
 end

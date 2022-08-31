@@ -1,5 +1,5 @@
-defmodule Wand.SafeTest do
-  use Wand.Case
+defmodule MagicWand.SafeTest do
+  use MagicWand.Case
 
   defmodule CustomException do
     defexception [:code, :message]
@@ -18,7 +18,7 @@ defmodule Wand.SafeTest do
       assert %Error{
                raw: %CustomException{code: :explode, message: "bang!"},
                stacktrace: [
-                 {Wand.SafeTest, :boom!, 0, [_file, _line, _error_info]} | _
+                 {MagicWand.SafeTest, :boom!, 0, [_file, _line, _error_info]} | _
                ]
              } = boom!() |> Safe.guard()
     end
@@ -26,7 +26,7 @@ defmodule Wand.SafeTest do
     test "raise from runtime" do
       assert %Error{
                raw: %ArithmeticError{},
-               stacktrace: [{Wand.SafeTest, :my_div, 2, [_file, _line]} | _]
+               stacktrace: [{MagicWand.SafeTest, :my_div, 2, [_file, _line]} | _]
              } = my_div(6, 0) |> Safe.guard()
     end
 

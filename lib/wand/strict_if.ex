@@ -1,12 +1,12 @@
-defmodule Wand.StrictIf do
+defmodule MagicWand.StrictIf do
   defmodule StrictIfException do
     defexception [:value, :message]
   end
 
   defmacro __using__([]) do
     quote do
-      import Wand.StrictIf, only: :macros
-      alias Wand.StrictIf.StrictIfException
+      import MagicWand.StrictIf, only: :macros
+      alias MagicWand.StrictIf.StrictIfException
     end
   end
 

@@ -1,5 +1,5 @@
-defmodule Wand.ErrorTest do
-  use Wand.Case
+defmodule MagicWand.ErrorTest do
+  use MagicWand.Case
 
   def get_error_struct() do
     err = Error.new({:error, :something_wrong}, :something_wrong, nil)
@@ -13,6 +13,6 @@ defmodule Wand.ErrorTest do
       stacktrace: [top_frame | _rest]
     } = get_error_struct()
 
-    assert {Wand.ErrorTest, :get_error_struct, 0, _file} = top_frame
+    assert {MagicWand.ErrorTest, :get_error_struct, 0, _file} = top_frame
   end
 end

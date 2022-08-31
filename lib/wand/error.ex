@@ -1,12 +1,12 @@
-defmodule Wand.Error do
+defmodule MagicWand.Error do
   alias __MODULE__
 
   defmacro __using__([]) do
     quote do
-      alias Wand.Error
-      alias Wand.ErrorSrc
-      alias Wand.MaybeError
-      alias Wand.Error.RawError
+      alias MagicWand.Error
+      alias MagicWand.ErrorSrc
+      alias MagicWand.MaybeError
+      alias MagicWand.Error.RawError
     end
   end
 
@@ -24,9 +24,9 @@ defmodule Wand.Error do
         raw: unquote(raw),
         reason: unquote(reason),
         details: unquote(details),
-        stacktrace: Wand.Error.get_filtered_stacktrace()
+        stacktrace: MagicWand.Error.get_filtered_stacktrace()
       }
-      |> Wand.ErrorLogger.log_error()
+      |> MagicWand.ErrorLogger.log_error()
     end
   end
 
@@ -40,9 +40,10 @@ defmodule Wand.Error do
     |> Enum.filter(fn {m, _f, _a, _file} ->
       run_loop_module? = m in [Process, :erl_eval, :elixir, IEx.Evaluator]
 
-      control_module? = m in [Wand.Error, Wand.MaybeError, Wand.Monad, Wand.Safe]
+      control_module? =
+        m in [MagicWand.Error, MagicWand.MaybeError, MagicWand.Monad, MagicWand.Safe]
 
-      maybe_error_impl? = match?("Elixir.Wand.MaybeError." <> _, m |> Atom.to_string())
+      maybe_error_impl? = match?("Elixir.MagicWand.MaybeError." <> _, m |> Atom.to_string())
 
       not (run_loop_module? or control_module? or maybe_error_impl?)
     end)

@@ -1,6 +1,6 @@
-defmodule Wand.Monad do
-  use Wand.Safe
-  use Wand.StrictIf
+defmodule MagicWand.Monad do
+  use MagicWand.Safe
+  use MagicWand.StrictIf
 
   alias Algae.Either.{Left, Right}
   alias Algae.Maybe
@@ -11,8 +11,8 @@ defmodule Wand.Monad do
   defmacro __using__([]) do
     quote do
       # When kernel is overridden, cannot use <, >, <=, >= in guard clause.
-      use Wand.Safe
-      use Wand.StrictIf
+      use MagicWand.Safe
+      use MagicWand.StrictIf
       use Witchcraft, override_kernel: false, except: [then: 2, sequence: 1, equal?: 2]
 
       alias Algae.{Either, Maybe, State, Writer}
@@ -23,7 +23,7 @@ defmodule Wand.Monad do
 
       alias Witchcraft.{Applicative, Functor, Traversable}
 
-      alias Wand.Monad
+      alias MagicWand.Monad
     end
   end
 

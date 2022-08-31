@@ -1,4 +1,4 @@
-defmodule Wand.Timer do
+defmodule MagicWand.Timer do
   defmacro __using__([]) do
     quote do
       require unquote(__MODULE__)

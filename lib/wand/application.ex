@@ -1,11 +1,11 @@
-defmodule Wand.Application do
+defmodule MagicWand.Application do
   use Application
 
   def start(_type, _arguments) do
     IO.puts("Stargin..")
 
     children = [
-      {Task.Supervisor, name: Wand.TaskSupervisor}
+      {Task.Supervisor, name: MagicWand.TaskSupervisor}
     ]
 
     options = [

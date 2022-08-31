@@ -1,4 +1,4 @@
-defmodule Wand.Nillable do
+defmodule MagicWand.Nillable do
   def map(nil, f) when is_function(f) do
     nil
   end

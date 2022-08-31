@@ -1,5 +1,5 @@
-defmodule Wand.MonadTest do
-  use Wand.Case
+defmodule MagicWand.MonadTest do
+  use MagicWand.Case
 
   describe "either/1" do
     test "Right" do

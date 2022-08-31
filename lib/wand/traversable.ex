@@ -1,4 +1,4 @@
-defmodule Wand.Traversable do
+defmodule MagicWand.Traversable do
   alias Algae.Either.{Left, Right}
 
   defmodule EitherList do

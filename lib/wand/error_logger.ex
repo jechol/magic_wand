@@ -1,6 +1,6 @@
-defmodule Wand.ErrorLogger do
+defmodule MagicWand.ErrorLogger do
   require Logger
-  alias Wand.Error
+  alias MagicWand.Error
 
   def log_error(%Error{reason: reason, details: details, stacktrace: stacktrace} = error) do
     if logging_error?() do
@@ -15,6 +15,6 @@ defmodule Wand.ErrorLogger do
   end
 
   defp logging_error?() do
-    Application.get_env(:wand, :logging_error, false)
+    Application.get_env(:magic_wand, :logging_error, false)
   end
 end

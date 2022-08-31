@@ -1,11 +1,11 @@
-defmodule Wand.Safe do
-  use Wand.Error
+defmodule MagicWand.Safe do
+  use MagicWand.Error
 
   defmacro __using__([]) do
     quote do
-      use Wand.Error
-      alias Wand.Safe
-      alias Wand.Stacktrace
+      use MagicWand.Error
+      alias MagicWand.Safe
+      alias MagicWand.Stacktrace
     end
   end
 
