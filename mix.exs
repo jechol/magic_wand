@@ -5,10 +5,14 @@ defmodule Anvil.MixProject do
     [
       app: :anvil,
       version: "0.1.0",
-      elixir: "~> 1.13",
+      elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      description: description(),
+      package: package(),
+      name: "Anvil",
+      source_url: "https://github.com/jechol/anvil"
     ]
   end
 
@@ -32,6 +36,17 @@ defmodule Anvil.MixProject do
       {:jason, ">= 0.0.0"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+    ]
+  end
+
+  defp description() do
+    "Anvil is toolkit to use Witchcraft and Reather more easily."
+  end
+
+  defp package() do
+    [
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/jechol/anvil"}
     ]
   end
 end
