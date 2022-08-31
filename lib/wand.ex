@@ -1,4 +1,4 @@
-defmodule Anvil do
+defmodule Wand do
   defmacro __using__([]) do
     %Macro.Env{module: mod, function: fun} = __CALLER__
 
@@ -18,14 +18,14 @@ defmodule Anvil do
       require Logger
       require Mok
 
-      use Anvil.StrictIf
-      use Anvil.Error
-      use Anvil.Monad
+      use Wand.StrictIf
+      use Wand.Error
+      use Wand.Monad
 
-      alias Anvil.Traversable.{EitherList, WriterList, ReatherList, ReatherMap}
-      alias Anvil.Nillable
-      alias Anvil.Async
-      alias Anvil
+      alias Wand.Traversable.{EitherList, WriterList, ReatherList, ReatherMap}
+      alias Wand.Nillable
+      alias Wand.Async
+      alias Wand
     end
   end
 end

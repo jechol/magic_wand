@@ -1,4 +1,4 @@
-defmodule Anvil.Async do
+defmodule Wand.Async do
   def map(enumerable, func) do
     map(enumerable, func, :erlang.system_info(:schedulers) * 16)
   end
@@ -9,7 +9,7 @@ defmodule Anvil.Async do
     enumerable
     |> Enum.chunk_every(chunk_size)
     |> Enum.map(fn chunks ->
-      Task.Supervisor.async(Anvil.TaskSupervisor, fn ->
+      Task.Supervisor.async(Wand.TaskSupervisor, fn ->
         chunks |> Enum.map(func)
       end)
     end)

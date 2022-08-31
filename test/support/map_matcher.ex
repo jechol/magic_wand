@@ -1,4 +1,4 @@
-defmodule Anvil.MapMatcher do
+defmodule Wand.MapMatcher do
   defmacro assert_map_match({:=, _, [left, right]}) do
     import ExUnit.Assertions
 

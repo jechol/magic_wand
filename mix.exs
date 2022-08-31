@@ -1,9 +1,9 @@
-defmodule Anvil.MixProject do
+defmodule Wand.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :anvil,
+      app: :wand,
       version: "0.1.0",
       elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -11,15 +11,15 @@ defmodule Anvil.MixProject do
       deps: deps(),
       description: description(),
       package: package(),
-      name: "Anvil",
-      source_url: "https://github.com/jechol/anvil"
+      name: "Wand",
+      source_url: "https://github.com/jechol/wand"
     ]
   end
 
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      mod: {Anvil.Application, []},
+      mod: {Wand.Application, []},
       extra_applications: [:logger]
     ]
   end
@@ -41,13 +41,13 @@ defmodule Anvil.MixProject do
   end
 
   defp description() do
-    "Anvil is toolkit to use Witchcraft and Reather more easily."
+    "Wand is toolkit to use Witchcraft and Reather more easily."
   end
 
   defp package() do
     [
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/jechol/anvil"}
+      links: %{"GitHub" => "https://github.com/jechol/wand"}
     ]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Anvil.Case do
+defmodule Wand.Case do
   use ExUnit.CaseTemplate
 
   using(opts) do
@@ -6,9 +6,9 @@ defmodule Anvil.Case do
 
     quote do
       use ExUnit.Case, async: unquote(async)
-      use Anvil
-      import Anvil.MonadAssertions
-      import Anvil.MapMatcher
+      use Wand
+      import Wand.MonadAssertions
+      import Wand.MapMatcher
     end
   end
 end

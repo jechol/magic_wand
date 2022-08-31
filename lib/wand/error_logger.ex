@@ -1,6 +1,6 @@
-defmodule Anvil.ErrorLogger do
+defmodule Wand.ErrorLogger do
   require Logger
-  alias Anvil.Error
+  alias Wand.Error
 
   def log_error(%Error{reason: reason, details: details, stacktrace: stacktrace} = error) do
     if logging_error?() do
@@ -15,6 +15,6 @@ defmodule Anvil.ErrorLogger do
   end
 
   defp logging_error?() do
-    Application.get_env(:anvil, :logging_error)
+    Application.get_env(:wand, :logging_error, false)
   end
 end

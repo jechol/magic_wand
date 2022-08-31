@@ -1,12 +1,12 @@
-defmodule Anvil.StrictIf do
+defmodule Wand.StrictIf do
   defmodule StrictIfException do
     defexception [:value, :message]
   end
 
   defmacro __using__([]) do
     quote do
-      import Anvil.StrictIf, only: :macros
-      alias Anvil.StrictIf.StrictIfException
+      import Wand.StrictIf, only: :macros
+      alias Wand.StrictIf.StrictIfException
     end
   end
 

@@ -1,4 +1,4 @@
-defmodule Anvil.Timer do
+defmodule Wand.Timer do
   defmacro __using__([]) do
     quote do
       require unquote(__MODULE__)

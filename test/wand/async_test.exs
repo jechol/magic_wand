@@ -1,5 +1,5 @@
-defmodule Anvil.AsyncTest do
-  use Anvil.Case
+defmodule Wand.AsyncTest do
+  use Wand.Case
 
   test "map/2" do
     check_less_than_10 = fn

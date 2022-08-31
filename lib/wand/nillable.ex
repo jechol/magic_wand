@@ -1,4 +1,4 @@
-defmodule Anvil.Nillable do
+defmodule Wand.Nillable do
   def map(nil, f) when is_function(f) do
     nil
   end

@@ -1,11 +1,11 @@
-defmodule Anvil.Safe do
-  use Anvil.Error
+defmodule Wand.Safe do
+  use Wand.Error
 
   defmacro __using__([]) do
     quote do
-      use Anvil.Error
-      alias Anvil.Safe
-      alias Anvil.Stacktrace
+      use Wand.Error
+      alias Wand.Safe
+      alias Wand.Stacktrace
     end
   end
 

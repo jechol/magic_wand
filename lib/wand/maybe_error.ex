@@ -1,4 +1,4 @@
-defprotocol Anvil.MaybeError do
+defprotocol Wand.MaybeError do
   @doc "Wrap with %Error{} if error value"
   @fallback_to_any true
   def wrap(data)
@@ -7,9 +7,9 @@ end
 require Logger
 require Mok
 
-use Anvil.StrictIf
-use Anvil.Error
-use Anvil.Monad
+use Wand.StrictIf
+use Wand.Error
+use Wand.Monad
 
 defimpl MaybeError, for: Atom do
   def wrap(:error), do: Error.new(:error, nil, nil)
@@ -79,7 +79,7 @@ defimpl MaybeError, for: Tesla.Env do
   end
 end
 
-defimpl MaybeError, for: Anvil.Gcp.GcpException do
+defimpl MaybeError, for: Wand.Gcp.GcpException do
   def wrap(exception), do: Error.new(exception, :gcp, exception)
 end
 

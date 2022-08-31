@@ -1,5 +1,5 @@
-defmodule Anvil.MonadTest do
-  use Anvil.Case
+defmodule Wand.MonadTest do
+  use Wand.Case
 
   describe "either/1" do
     test "Right" do

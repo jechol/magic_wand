@@ -1,5 +1,5 @@
-defmodule Anvil.TraversableTest do
-  use Anvil.Case
+defmodule Wand.TraversableTest do
+  use Wand.Case
 
   test "EitherList" do
     assert_right [] == [] |> EitherList.traverse()

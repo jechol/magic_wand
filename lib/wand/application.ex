@@ -1,11 +1,11 @@
-defmodule Anvil.Application do
+defmodule Wand.Application do
   use Application
 
   def start(_type, _arguments) do
     IO.puts("Stargin..")
 
     children = [
-      {Task.Supervisor, name: Anvil.TaskSupervisor}
+      {Task.Supervisor, name: Wand.TaskSupervisor}
     ]
 
     options = [

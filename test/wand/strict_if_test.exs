@@ -1,5 +1,5 @@
-defmodule Anvil.StrictIfTest do
-  use Anvil.Case
+defmodule Wand.StrictIfTest do
+  use Wand.Case
 
   def div_10_by(n) do
     10 / n

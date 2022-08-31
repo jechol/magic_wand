@@ -1,12 +1,12 @@
-defmodule Anvil.Error do
+defmodule Wand.Error do
   alias __MODULE__
 
   defmacro __using__([]) do
     quote do
-      alias Anvil.Error
-      alias Anvil.ErrorSrc
-      alias Anvil.MaybeError
-      alias Anvil.Error.RawError
+      alias Wand.Error
+      alias Wand.ErrorSrc
+      alias Wand.MaybeError
+      alias Wand.Error.RawError
     end
   end
 
@@ -24,9 +24,9 @@ defmodule Anvil.Error do
         raw: unquote(raw),
         reason: unquote(reason),
         details: unquote(details),
-        stacktrace: Anvil.Error.get_filtered_stacktrace()
+        stacktrace: Wand.Error.get_filtered_stacktrace()
       }
-      |> Anvil.ErrorLogger.log_error()
+      |> Wand.ErrorLogger.log_error()
     end
   end
 
@@ -40,9 +40,9 @@ defmodule Anvil.Error do
     |> Enum.filter(fn {m, _f, _a, _file} ->
       run_loop_module? = m in [Process, :erl_eval, :elixir, IEx.Evaluator]
 
-      control_module? = m in [Anvil.Error, Anvil.MaybeError, Anvil.Monad, Anvil.Safe]
+      control_module? = m in [Wand.Error, Wand.MaybeError, Wand.Monad, Wand.Safe]
 
-      maybe_error_impl? = match?("Elixir.Anvil.MaybeError." <> _, m |> Atom.to_string())
+      maybe_error_impl? = match?("Elixir.Wand.MaybeError." <> _, m |> Atom.to_string())
 
       not (run_loop_module? or control_module? or maybe_error_impl?)
     end)

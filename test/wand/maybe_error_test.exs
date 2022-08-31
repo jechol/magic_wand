@@ -1,7 +1,7 @@
-defmodule Anvil.MaybeErrorTest do
-  use Anvil.Case
+defmodule Wand.MaybeErrorTest do
+  use Wand.Case
 
-  alias Anvil.MaybeError
+  alias Wand.MaybeError
 
   test "Atom" do
     assert %Error{raw: :error} = :error |> MaybeError.wrap()

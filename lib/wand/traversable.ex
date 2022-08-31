@@ -1,4 +1,4 @@
-defmodule Anvil.Traversable do
+defmodule Wand.Traversable do
   alias Algae.Either.{Left, Right}
 
   defmodule EitherList do
