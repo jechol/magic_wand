@@ -1,18 +1,31 @@
 defmodule Anvil do
-  @moduledoc """
-  Documentation for `Anvil`.
-  """
+  defmacro __using__([]) do
+    %Macro.Env{module: mod, function: fun} = __CALLER__
 
-  @doc """
-  Hello world.
+    use_reather =
+      if mod != nil and fun == nil do
+        quote do
+          use Reather
+        end
+      else
+        quote do
+        end
+      end
 
-  ## Examples
+    quote do
+      unquote(use_reather)
 
-      iex> Anvil.hello()
-      :world
+      require Logger
+      require Mok
 
-  """
-  def hello do
-    :world
+      use Anvil.StrictIf
+      use Anvil.Error
+      use Anvil.Monad
+
+      alias Anvil.Traversable.{EitherList, WriterList, ReatherList, ReatherMap}
+      alias Anvil.Nillable
+      alias Anvil.Async
+      alias Anvil
+    end
   end
 end
