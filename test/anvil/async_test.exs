@@ -17,5 +17,11 @@ defmodule Anvil.AsyncTest do
 
     assert 0..19 |> Enum.map(check_less_than_10) ==
              0..19 |> Async.map(slow_check_less_than_10)
+
+    {time_us, _} = :timer.tc(fn -> 0..19 |> Enum.map(slow_check_less_than_10) end)
+    assert time_us > 10_000 * 10
+
+    {time_us, _} = :timer.tc(fn -> 0..19 |> Async.map(slow_check_less_than_10) end)
+    assert time_us < 10_000 * 10
   end
 end
