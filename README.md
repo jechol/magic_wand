@@ -9,7 +9,7 @@ The package can be installed by adding `magic_wand` to your list of dependencies
 ```elixir
 def deps do
   [
-    {:magic_wand, "~> 0.1.0"}
+    {:magic_wand, "~> 0.2.0"}
   ]
 end
 ```
